@@ -1,0 +1,99 @@
+.project_wrapper
+  .project
+    .content_wrapper
+      .project_logo
+        img.waffle_logo alt=("#") src=(asset_path "logo.png")
+      .form_wrapper
+        img.brush alt=("#") src=(asset_path "brush-bg.png")
+        img.close alt=("#") src=(asset_path "close.png")
+        form.project_form name="myform" method="post" enctype="" action="#" 
+          .project_name
+            input#name name="name" type="text" placeholder="Ваше Имя" value="" required=""
+          .project_country
+            select#country  name="country" type="text" placeholder="Страна" value="" required=""
+              option selected="" value="def" Страна
+              option name="Украина" value="ukr" Украина
+              option name="Россия" value="rus" Россия
+              option name="Беларусь" value="bel" Беларусь
+              option name="Казахстан" value="kazah" Казахстан
+          .project_city
+            select#city name="city" type="text" placeholder="Город" value="" required=""
+              option selected="" Город
+            select#city_data_src 
+              option data-country="ukr" Киев
+              option data-country="ukr" Днепропетровск
+              option data-country="ukr" Донецк
+              option data-country="ukr" Запорожье
+              option data-country="ukr" Львов
+              option data-country="ukr" Одесса
+              option data-country="ukr" Харьков
+              option data-country="ukr" Херсон
+              option data-country="rus" Москва
+              option data-country="rus" Санкт-Петербург
+              option data-country="rus" Новосибирск
+              option data-country="rus" Екатеринбург
+              option data-country="rus" Нижний Новгород
+              option data-country="rus" Казань
+              option data-country="rus" Самара
+              option data-country="rus" Челябинск
+              option data-country="rus" Омск
+              option data-country="rus" Ростов-на-Дону
+              option data-country="rus" Уфа
+              option data-country="rus" Красноярск
+              option data-country="rus" Пермь
+              option data-country="rus" Волгоград
+              option data-country="rus" Воронеж
+              option data-country="bel" Минск
+              option data-country="bel" Брест
+              option data-country="bel" Гродно
+              option data-country="bel" Гомель
+              option data-country="bel" Витебск
+              option data-country="bel" Могилёв
+              option data-country="kazah" Алматы
+              option data-country="kazah" Шымкент
+              option data-country="kazah" Караганда
+              option data-country="kazah" Тараз
+              option data-country="kazah" Астана
+              option data-country="kazah" Павлодар
+          .project_information
+            select#info name="info" type="" value="" required=""
+              option selected="" Вас интересует
+              option value="frenchaiz" Франшиза 
+              option value="cooperation" Сотрудничество
+              option value="work" Работка в команде с нами
+          .project_connect 
+            select#connect name="connect" type="" value="" required=""
+              option selected="" value="def" Выберете способ связи
+              option value="tel" По телефону
+              option value="vib" Viber
+              option value="whatApp" What`sApp
+              option value="email" Email
+          .connect_tel
+            input#input_tel name="tel" type="tel" placeholder="Номер телефона" value="" 
+          .connect_email
+            input#input_email name="email" type="email" placeholder="Ваш email" value="" 
+          button.button_submit type="submit" Отправить
+      .content  
+        img.people alt=("#") src=(asset_path "people.png")
+        img.comming_soon src=(asset_path "comming_soon.png") alt=("#")
+        .button_wrapper
+          p запросить информацию
+        .frenchize_wrapper
+          p франчайзинг для стран снг и европы
+        .footer_wrapper
+          p  bubble waffle @ 2014
+      .clr
+      .waffle_wrapper
+        img.waffle src=(asset_path "waffle.png") 
+  .social_wrapper
+    a.insta href="#"
+      img alt="#" src=(asset_path "instagram.png")
+    a.fb href="#"
+      img alt="#" src=(asset_path "facebook.png")
+    a.twit href="#"
+      img alt="#" src=(asset_path "twitter.png")
+    a.vk href="#"
+      img alt="#" src=(asset_path "vk.png")
+      
+
+

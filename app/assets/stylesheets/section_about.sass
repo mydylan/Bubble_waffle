@@ -1,0 +1,130 @@
+@import bourbon
+
+html
+  height: 100%
+body
+  overflow: hidden
+  margin: 0
+  height: 100%
+
+#mfPreviewBarShow
+  display: none !important
+#mfPreviewBar
+  display: none !important
+
+.project_wrapper
+  position: relative
+  .waffle_wrapper
+    position: relative
+    max-width: 33%
+    left: -600px
+    @include transition(left 0.6s)
+    &.active
+      left: 0  
+  .waffle      
+    position: absolute
+    width: 100%
+    bottom: -75px
+    left: 50px   
+
+
+.project
+  margin: 0 auto
+  max-width: 1150px
+  padding: 0
+  
+  .content_wrapper 
+    width: 100%
+    margin: 0 auto
+    padding: 6px  0 20px 0
+    position: relative
+    height: 100%
+    overflow: hidden
+    @media screen and (max-height: 768px)
+      height: 90%
+  
+  .project_logo
+    position: relative
+    margin: 0 auto
+    width: 17.2173%
+    top: -200px
+    @include transition(top 0.6s linear 0.6s)
+    &.active
+      top: 0
+    .waffle_logo
+      display: block
+      width: 100%
+      
+  .content
+    position: relative
+    float: right
+    width: 58.5%
+    margin: -52px auto 0 auto
+    .people
+      position: relative
+      z-index: 2
+      width: 30%
+      bottom: -700px
+      @include transition(bottom 0.6s linear 0.6s)
+      &.active
+        bottom: 0      
+
+    .comming_soon
+      position: relative
+      width: 40%
+      margin-left: -25px
+      bottom: -700px
+      filter: contrast(150%)
+      -webkit-filter: contrast(150%)
+      -moz-filter: contrast(150%)
+      -ms-filter: contrast(150%)
+      -o-filter: contrast(150%)
+
+      @include transition(bottom 0.6s linear 0.8s)
+      &.active
+        bottom: 0
+
+    .button_wrapper
+      display: block
+      bottom: -300px
+      left: -54px
+      position: absolute
+      width: 46.5081%
+      height: 50px
+      background-color: #c4141c
+      border-radius: 8px
+      box-shadow: 0px 6px 0px 0.00px #8c0f14
+      z-index: 5
+      cursor: pointer
+      @include transition(bottom 0.6s linear 0.2s)
+      &.active
+        bottom: 203px 
+
+      p
+        font-family: 'LunchBox Bold'
+        text-transform: uppercase
+        text-align: center
+        line-height: 0
+        font-size: 28px
+        font-weight: 400
+        color: #ffffff
+        letter-spacing: 2px
+    .frenchize_wrapper
+      position: relative
+      margin: 0 0 0 -63px
+      float: left
+      padding: 40px  0
+      bottom: -200px
+      &.active
+        bottom: 0px 
+        @include transition(bottom 0.4s linear 1.6s)
+      p
+        font-family: 'LunchBox'
+        text-transform: uppercase
+        text-align: center
+        font-size: 28px
+        font-weight: 400
+        color: #000000
+  .clr
+    clear: both
+

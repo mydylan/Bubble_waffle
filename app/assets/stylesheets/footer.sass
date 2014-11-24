@@ -1,0 +1,27 @@
+@import bourbon
+.footer_wrapper
+  position: relative
+  float: left
+  left: -230px      
+  bottom: -200px
+  &.active
+    bottom: -115px 
+    @include transition(bottom 0.4s linear 1.6s)
+  p
+    font-family: 'LunchBox'
+    text-align: center
+    font-size: 16px
+    font-weight: 400
+    color: #000000
+    margin: 0
+
+.social_wrapper
+  position: relative
+  float: right
+  bottom: 90px
+  right: -300px
+  &.active
+    right: 0
+    @include transition(right 0.4s linear 0.8s)
+  img
+    margin: 0 40px 0 0
