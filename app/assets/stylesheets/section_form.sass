@@ -10,7 +10,7 @@
     right: 395px
     z-index: 1
     cursor: pointer
-    @include transition(top 0.8s linear)
+    @include transition(top 0.8s cubic-bezier(0.42, 0, 0.58, 1))
     &.active
       display: block
       top: 10px
@@ -22,7 +22,7 @@
     top: 1000px
     left: -12px
     @include filter(contrast(150%))
-    @include transition(top 0.4s linear)
+    @include transition(top 0.4s cubic-bezier(0.42, 0, 0.58, 1))
     &.active
       top: -72px
       display: block
@@ -33,7 +33,7 @@
     top: 1000px
     left: 423px
     width: 27.217%
-    @include transition(top 0.8s linear)
+    @include transition(top 0.8s cubic-bezier(0.42, 0, 0.58, 1))
     &.active
       display: block
       top: 10px
@@ -103,7 +103,7 @@
     background: url(new-arrow.png) no-repeat
     background-position: 290px  22px
     text-indent: 0.01px
-    text-overflow: ""
+    text-overflow: ''
     option
       color: #000000
       outline: none
