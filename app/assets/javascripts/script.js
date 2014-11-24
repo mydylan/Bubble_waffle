@@ -17,16 +17,17 @@ $(document).ready(function(){
     waffle = $('.waffle_wrapper'),
     logo = $('.project_logo'),
     people = $('.people'),
-    comming_soon = $('.comming_soon'),
+    coming_soon = $('.coming_soon'),
     frenchize = $('.frenchize_wrapper'),
     footer = $('.footer_wrapper'),
-    social = $('.social_wrapper');
+    social = $('.social_wrapper'),
+    doc = $(document);
 
   setTimeout(function(){
     waffle.addClass('active');
     logo.addClass('active');
     people.addClass('active');
-    comming_soon.addClass('active');
+    coming_soon.addClass('active');
     button.addClass('active');
     frenchize.addClass('active');
     footer.addClass('active');
@@ -69,7 +70,7 @@ $(document).ready(function(){
         city_select.html('');
         city_select.append(ukr_city.clone());
       }
-      else if(country.val() === "rus"){
+      else if(country.val() === "rus"){9
         city_select.html('');
         city_select.append(rus_city.clone());
       }
@@ -97,5 +98,12 @@ $(document).ready(function(){
     button.addClass('active');
     form[0].reset();
   });
+
+  doc.on('keydown', function(event){
+    if (event.keyCode == 9 && !form.hasClass('active')){
+      event.preventDefault();
+    }
+  });
+
 });
 
