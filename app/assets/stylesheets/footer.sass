@@ -1,27 +1,26 @@
 @import bourbon
+
 .footer_wrapper
   position: relative
-  float: left
-  left: -230px      
+  left: 40px      
   bottom: -200px
   &.active
-    bottom: -115px 
-    @include transition(bottom 0.4s cubic-bezier(0.42, 0, 0.58, 1) 1.2s)
+    bottom: 20px 
+    @include transition(bottom 0.2s cubic-bezier(0, 0.72, 0.01, 1) 0.8s)
   p
     font-family: 'LunchBox'
-    text-align: center
     font-size: 16px
     font-weight: 400
     color: #000000
     margin: 0
 
 .social_wrapper
-  position: relative
+  position: fixed
   float: right
-  bottom: 90px
+  bottom: 20px
   right: -300px
   &.active
     right: 0
-    @include transition(right 0.4s cubic-bezier(0.42, 0, 0.58, 1) 1.2s)
+    @include transition(right 0.2s cubic-bezier(0, 0.72, 0.01, 1) 0.9s)
   img
-    margin: 0 40px 0 0
+    margin: 0 20px 0 0

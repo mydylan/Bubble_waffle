@@ -3,9 +3,10 @@
 html
   height: 100%
 body
-  overflow: hidden
   margin: 0
-  height: 100%
+  height: 815px
+  overflow: auto
+
 
 #mfPreviewBarShow
   display: none !important
@@ -14,41 +15,43 @@ body
 
 .project_wrapper
   position: relative
+  max-height: 815px
+  height: 100%
+  overflow: hidden
   .waffle_wrapper
     position: relative
     max-width: 33%
     bottom: -800px
-    @include transition(bottom 0.6s cubic-bezier(0.42, 0, 0.58, 1))
+    @include transition(bottom 0.2s cubic-bezier(0, 0.72, 0.01, 1))
     &.active
-      bottom: 0  
+      bottom: 130px  
+      left: 50px
   .waffle      
-    position: absolute
-    width: 100%
-    bottom: -75px
-    left: 50px   
+    max-width: 100%
+    max-height: 100%
 
 
 .project
   margin: 0 auto
   max-width: 1150px
   padding: 0
+  height: 100% 
+
   
   .content_wrapper 
+    height: 100%
     width: 100%
     margin: 0 auto
-    padding: 6px  0 20px 0
+    padding: 6px  0 5px 0
     position: relative
-    height: 100%
-    overflow: hidden
-    @media screen and (max-height: 768px)
-      height: 90%
+
   
   .project_logo
     position: relative
     margin: 0 auto
     width: 17.2173%
     top: -200px
-    @include transition(top 0.6s cubic-bezier(0.42, 0, 0.58, 1)0.4s)
+    @include transition(top 0.2s cubic-bezier(0, 0.72, 0.01, 1)0.4s)
     &.active
       top: 0
     .waffle_logo
@@ -65,7 +68,7 @@ body
       z-index: 2
       width: 30%
       bottom: -700px
-      @include transition(bottom 0.6s cubic-bezier(0.42, 0, 0.58, 1) 0.6s)
+      @include transition(bottom 0.2s cubic-bezier(0, 0.72, 0.01, 1) 0.2s)
       &.active
         bottom: 0      
 
@@ -79,8 +82,7 @@ body
       -moz-filter: contrast(150%)
       -ms-filter: contrast(150%)
       -o-filter: contrast(150%)
-
-      @include transition(bottom 0.6s cubic-bezier(0.42, 0, 0.58, 1) 0.8s)
+      @include transition(bottom 0.2s cubic-bezier(0, 0.72, 0.01, 1) 0.6s)
       &.active
         bottom: 0
 
@@ -96,9 +98,10 @@ body
       box-shadow: 0px 6px 0px 0.00px #8c0f14
       z-index: 5
       cursor: pointer
-      @include transition(bottom 0.6s cubic-bezier(0.42, 0, 0.58, 1) 0.2s)
+      @include transition(bottom 0.4s cubic-bezier(0.86, 0, 1, 0.51))
       &.active
         bottom: 203px 
+        @include transition(bottom 0.4s cubic-bezier(0, 0.72, 0.01, 1)1s)
 
       p
         font-family: 'LunchBox Bold'
@@ -111,17 +114,16 @@ body
         letter-spacing: 2px
     .frenchize_wrapper
       position: relative
-      margin: 0 0 0 -63px
-      float: left
-      padding: 40px  0
+      margin: 0 0 0 -62px
+      padding: 60px 0 0 0
       bottom: -200px
+      @include transition(bottom 0.2s cubic-bezier(0, 0.72, 0.01, 1) 0.8s)
       &.active
         bottom: 0px 
-        @include transition(bottom 0.4s cubic-bezier(0.42, 0, 0.58, 1) 1s)
+        
       p
         font-family: 'LunchBox'
         text-transform: uppercase
-        text-align: center
         font-size: 28px
         font-weight: 400
         color: #000000

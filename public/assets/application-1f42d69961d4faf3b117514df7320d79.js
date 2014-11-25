@@ -10779,37 +10779,52 @@ $(document).ready(function(){
     select = $('#connect'),
     input_email = $('.connect_email'),
     input_tel = $('.connect_tel'),
-    country = $('#country'),
+    input_skype = $('.connect_skype'),
     input_city = $('.project_city'),
+    country = $('#country'),
     city_select = $("#city"),
     ukr_city = $("option[data-country='ukr']"),
     rus_city = $("option[data-country='rus']"),
     bel_city = $("option[data-country='bel']"),
-    kazah_city = $("option[data-country='kazah']");
-
-
+    kazah_city = $("option[data-country='kazah']"),
+    waffle = $('.waffle_wrapper'),
+    logo = $('.project_logo'),
+    people = $('.people'),
+    coming_soon = $('.coming_soon'),
+    frenchize = $('.frenchize_wrapper'),
+    footer = $('.footer_wrapper'),
+    social = $('.social_wrapper'),
+    doc = $(document);
 
   setTimeout(function(){
-    $('.waffle_wrapper').addClass('active');
-    $('.project_logo').addClass('active');
-    $('.people').addClass('active');
-    $('.comming_soon').addClass('active');
-    $('.button_wrapper').addClass('active');
-    $('.frenchize_wrapper').addClass('active');
-    $('.footer_wrapper').addClass('active');
+    waffle.addClass('active');
+    logo.addClass('active');
+    people.addClass('active');
+    coming_soon.addClass('active');
+    button.addClass('active');
+    frenchize.addClass('active');
+    footer.addClass('active');
+    social.addClass('active');
   }, 2000);
   
-  button.on('click', function(){
-    if (!brush.hasClass('active')) {
-      brush.addClass('active');
-      form.addClass('active');
-      close.addClass('active');
-      button.addClass('hidden');
-    }
+  button.on('click', function(event){
+    event.preventDefault;
+    event.stopPropagation;
+    brush.addClass('active');
+    setTimeout(function(){
+      form.addClass('active');}, 600);
+    close.addClass('active');
+    input_email.removeClass('active');
+    input_tel.removeClass('active');
+    input_city.removeClass('active');
+    input_skype.removeClass('active');
+    button.removeClass('active');
+
   });
 
-  select.on('click', function(){
+  select.on('change', function(){
     if (select.val() === "email"){
+      input_skype.removeClass('active');
       input_tel.removeClass('active');
       input_email.addClass('active');
       input_email.children().attr('required','');
@@ -10817,14 +10832,22 @@ $(document).ready(function(){
     else if(select.val() === 'def'){
       input_email.removeClass('active');
       input_tel.removeClass('active');
+      input_skype.removeClass('active');
     }
+    else if(select.val() === 'skype'){
+      input_email.removeClass('active');
+      input_tel.removeClass('active');
+      input_skype.addClass('active');
+
+  }
     else{
+      input_skype.removeClass('active');
       input_email.removeClass('active');
       input_tel.addClass('active');
       input_tel.children().attr('required', '');
     }
   });
-  country.on('click', function(){
+  country.on('change', function(){
     if(country.val() !== "def"){
       input_city.addClass('active');
       if(country.val() === "ukr"){
@@ -10852,15 +10875,20 @@ $(document).ready(function(){
   });
 
   close.on('click', function(){
-    brush.removeClass('active');
     form.removeClass('active');
+    setTimeout(function(){
+      brush.removeClass('active')}, 400);
     close.removeClass('active');
-    button.removeClass('hidden');
+    button.addClass('active');
     form[0].reset();
-    input_email.removeClass('active');
-    input_tel.removeClass('active');
-    input_city.removeClass('active');
   });
+
+  doc.on('keydown', function(event){
+    if (event.keyCode == 9 && !form.hasClass('active')){
+      event.preventDefault();
+    }
+  });
+
 });
 
 (function() {
@@ -10897,35 +10925,6 @@ $(document).ready(function(){
       modules: ['index']
     }
   ];
-
-}).call(this);
-(function() {
-  "use strict";
-  window.Modules = window.Modules || {};
-
-  window.Modules.main = (function() {
-    var initialize, setup_events, setup_interface, setup_vars, vars;
-    vars = {};
-    setup_vars = function() {
-      return vars = {
-        button: $('.button_wrapper')
-      };
-    };
-    setup_interface = function() {};
-    setup_events = function() {
-      return vars.button.on('click', function() {
-        return alert('adsads');
-      });
-    };
-    initialize = function() {
-      setup_vars();
-      setup_interface();
-      return setup_events();
-    };
-    return {
-      init: initialize
-    };
-  })();
 
 }).call(this);
 // This is a manifest file that'll be compiled into application.js, which will include all the files

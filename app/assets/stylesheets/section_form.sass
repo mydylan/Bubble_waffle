@@ -1,42 +1,40 @@
 @import bourbon
 
+
+.close
+  position: absolute
+  left: 310px
+  top: -19px
+  height: 20px
+  width: 20px
+  z-index: 1
+  cursor: pointer
 .form_wrapper
   position: relative
-  .close
-    position: absolute
-    height: 20px
-    width: 20px
-    top: 1000px
-    right: 395px
-    z-index: 1
-    cursor: pointer
-    @include transition(top 0.8s cubic-bezier(0.42, 0, 0.58, 1))
-    &.active
-      display: block
-      top: 10px
-
   .brush
     position: absolute
     opacity: 0.8
     width: 104%
-    top: 1000px
+    top: 0
     left: -12px
+    @include transform(translateY(110%))
     @include filter(contrast(150%))
-    @include transition(top 0.4s cubic-bezier(0.42, 0, 0.58, 1))
+    @include transition(transform 0.4s cubic-bezier(0.86, 0, 1, 0.51))
     &.active
-      top: -72px
+      @include transform(translateY(-10%))
       display: block
 
   .project_form
     position: absolute
     z-index: 10
-    top: 1000px
+    top: 0
     left: 423px
     width: 27.217%
-    @include transition(top 0.8s cubic-bezier(0.42, 0, 0.58, 1))
+    @include transform(translateY(250%))
+    @include transition(transform 0.4s cubic-bezier(0, 0.28, 0.35, 1))
     &.active
+      @include transform(translateY(8%))
       display: block
-      top: 10px
 
   .form_list
     font-size: 28px
@@ -51,7 +49,7 @@
     
   #name
     width: 313px
-    padding: 5px 0
+    padding: 0 0 0 5px
     font-size: 28px
     font-family: 'LunchBox'
     text-align: left
@@ -89,7 +87,6 @@
   select
     width: 120%
     overflow: hidden
-    padding: 5px 0
     font-size: 28px
     font-family: 'LunchBox'
     font-weight: 400
@@ -112,6 +109,7 @@
     display: none
   .connect_tel,
   .connect_email,
+  .connect_skype,
   .project_city
     display: none
     margin: 0 0 20px 0
@@ -120,9 +118,10 @@
       display: block
 
   #input_tel,
-  #input_email
+  #input_email,
+  #input_skype
     width: 313px
-    padding: 5px 0
+    padding: 0 0 0 5px
     font-size: 28px
     font-family: 'LunchBox'
     text-align: left

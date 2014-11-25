@@ -7,8 +7,9 @@ $(document).ready(function(){
     select = $('#connect'),
     input_email = $('.connect_email'),
     input_tel = $('.connect_tel'),
-    country = $('#country'),
+    input_skype = $('.connect_skype'),
     input_city = $('.project_city'),
+    country = $('#country'),
     city_select = $("#city"),
     ukr_city = $("option[data-country='ukr']"),
     rus_city = $("option[data-country='rus']"),
@@ -38,17 +39,20 @@ $(document).ready(function(){
     event.preventDefault;
     event.stopPropagation;
     brush.addClass('active');
-    form.addClass('active');
+    setTimeout(function(){
+      form.addClass('active');}, 600);
     close.addClass('active');
     input_email.removeClass('active');
     input_tel.removeClass('active');
     input_city.removeClass('active');
+    input_skype.removeClass('active');
     button.removeClass('active');
 
   });
 
-  select.on('click', function(){
+  select.on('change', function(){
     if (select.val() === "email"){
+      input_skype.removeClass('active');
       input_tel.removeClass('active');
       input_email.addClass('active');
       input_email.children().attr('required','');
@@ -56,21 +60,29 @@ $(document).ready(function(){
     else if(select.val() === 'def'){
       input_email.removeClass('active');
       input_tel.removeClass('active');
+      input_skype.removeClass('active');
     }
+    else if(select.val() === 'skype'){
+      input_email.removeClass('active');
+      input_tel.removeClass('active');
+      input_skype.addClass('active');
+
+  }
     else{
+      input_skype.removeClass('active');
       input_email.removeClass('active');
       input_tel.addClass('active');
       input_tel.children().attr('required', '');
     }
   });
-  country.on('click', function(){
+  country.on('change', function(){
     if(country.val() !== "def"){
       input_city.addClass('active');
       if(country.val() === "ukr"){
         city_select.html('');
         city_select.append(ukr_city.clone());
       }
-      else if(country.val() === "rus"){9
+      else if(country.val() === "rus"){
         city_select.html('');
         city_select.append(rus_city.clone());
       }
@@ -93,7 +105,7 @@ $(document).ready(function(){
   close.on('click', function(){
     form.removeClass('active');
     setTimeout(function(){
-      brush.removeClass('active')}, 400);
+      brush.removeClass('active')}, 100);
     close.removeClass('active');
     button.addClass('active');
     form[0].reset();

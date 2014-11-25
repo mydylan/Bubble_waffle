@@ -5,8 +5,8 @@
         img.waffle_logo alt=("#") src=(asset_path "logo.png")
       .form_wrapper
         img.brush alt=("#") src=(asset_path "brush-bg.png")
-        img.close alt=("#") src=(asset_path "close.png")
         form.project_form name="myform" method="post" enctype="" action="#" 
+          img.close alt=("#") src=(asset_path "close.png")
           .project_name
             input#name name="name" type="text" placeholder="Ваше Имя" value="" required=""
           .project_country
@@ -68,11 +68,16 @@
               option value="vib" Viber
               option value="whatApp" What`sApp
               option value="email" Email
+              option value="skype" Skype
           .connect_tel
             input#input_tel name="tel" type="tel" placeholder="Номер телефона" value="" 
           .connect_email
             input#input_email name="email" type="email" placeholder="Ваш email" value="" 
+          .connect_skype
+            input#input_skype name="skype" type="text" placeholder="Ваш skype" value=""
+          .clr 
           button.button_submit type="submit" Отправить
+      .clr
       .content  
         img.people alt=("#") src=(asset_path "people.png")
         img.coming_soon src=(asset_path "coming_soon.png") alt=("#")
@@ -82,18 +87,18 @@
           p франчайзинг для стран снг и европы
         .footer_wrapper
           p  bubble waffle @ 2014
-      .clr
       .waffle_wrapper
-        img.waffle src=(asset_path "waffle.png") 
+        img.waffle src=(asset_path "waffle(1).png") 
   .social_wrapper
-    a.insta href="#"
-      img alt="#" src=(asset_path "instagram.png")
-    a.fb href="#"
-      img alt="#" src=(asset_path "facebook.png")
-    a.twit href="#"
-      img alt="#" src=(asset_path "twitter.png")
-    a.vk href="#"
+    a.vk title="vk" target="_blank" href="http://vk.com/public71493777"
       img alt="#" src=(asset_path "vk.png")
+    a.insta title="instagram" target="_blank" href="http://instagram.com/mybubblewaffle"
+      img alt="#" src=(asset_path "instagram.png")
+    a.fb title="facebook" target="_blank" ыыhref="https://www.facebook.com/MyBubblewaffle"
+      img alt="#" src=(asset_path "facebook.png")
+    / a.twit title="twitter" href="#" target="_blank"
+    /   img alt="#" src=(asset_path "twitter.png")
+
       
 
 
