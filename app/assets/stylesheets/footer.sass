@@ -1,18 +1,41 @@
 @import bourbon
 
-.footer_wrapper
-  position: relative
-  left: 40px      
-  bottom: -200px
-  &.active
-    bottom: 20px 
-    @include transition(bottom 0.2s cubic-bezier(0, 0.72, 0.01, 1) 0.8s)
-  p
-    font-family: 'LunchBox'
-    font-size: 16px
-    font-weight: 400
-    color: #000000
-    margin: 0
+.footer
+  position: fixed   
+  bottom: 10px
+  width: 100%
+  .frenchize_wrapper
+    width: 30%
+    position: relative
+    margin: 0 auto  
+    bottom: -150px
+    @include transition(bottom 0.2s cubic-bezier(0, 0.72, 0.01, 1) 0.7s)
+    &.active
+      bottom: 0
+    p
+      font-family: 'LunchBox'
+      text-transform: uppercase
+      text-align: center
+      font-size: 28px
+      font-weight: 400
+      color: #000000
+      margin: 0
+ 
+  .copy_writter
+    width: 20%
+    position: relative
+    margin: 0 auto   
+    bottom: -150px
+    @include transition(bottom 0.2s cubic-bezier(0, 0.72, 0.01, 1) 0.8s) 
+    &.active
+      bottom: 0
+    p
+      font-family: 'LunchBox'
+      font-size: 16px
+      text-align: center
+      font-weight: 400
+      color: #000000
+      margin: 0
 
 .social_wrapper
   position: fixed
@@ -24,3 +47,5 @@
     @include transition(right 0.2s cubic-bezier(0, 0.72, 0.01, 1) 0.9s)
   img
     margin: 0 20px 0 0
+  a
+    text-decoration: none

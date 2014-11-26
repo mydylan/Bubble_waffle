@@ -10779,20 +10779,20 @@ $(document).ready(function(){
     select = $('#connect'),
     input_email = $('.connect_email'),
     input_tel = $('.connect_tel'),
-    input_skype = $('.connect_skype'),
+	  input_skype = $('.connect_skype'),
     input_city = $('.project_city'),
     country = $('#country'),
     city_select = $("#city"),
     ukr_city = $("option[data-country='ukr']"),
     rus_city = $("option[data-country='rus']"),
     bel_city = $("option[data-country='bel']"),
-    kazah_city = $("option[data-country='kazah']"),
-    waffle = $('.waffle_wrapper'),
+    kaz_city = $("option[data-country='kaz']"),
+	  waffle = $('.waffle_wrapper'),
     logo = $('.project_logo'),
     people = $('.people'),
     coming_soon = $('.coming_soon'),
     frenchize = $('.frenchize_wrapper'),
-    footer = $('.footer_wrapper'),
+    copy_writter = $('.copy_writter'),
     social = $('.social_wrapper'),
     doc = $(document);
 
@@ -10803,15 +10803,13 @@ $(document).ready(function(){
     coming_soon.addClass('active');
     button.addClass('active');
     frenchize.addClass('active');
-    footer.addClass('active');
+    copy_writter.addClass('active');
     social.addClass('active');
   }, 2000);
   
-  button.on('click', function(event){
-    event.preventDefault;
-    event.stopPropagation;
+  button.on('click', function(){
     brush.addClass('active');
-    setTimeout(function(){
+	  setTimeout(function(){
       form.addClass('active');}, 600);
     close.addClass('active');
     input_email.removeClass('active');
@@ -10819,7 +10817,6 @@ $(document).ready(function(){
     input_city.removeClass('active');
     input_skype.removeClass('active');
     button.removeClass('active');
-
   });
 
   select.on('change', function(){
@@ -10839,7 +10836,7 @@ $(document).ready(function(){
       input_tel.removeClass('active');
       input_skype.addClass('active');
 
-  }
+    }
     else{
       input_skype.removeClass('active');
       input_email.removeClass('active');
@@ -10862,9 +10859,9 @@ $(document).ready(function(){
         city_select.html('');
         city_select.append(bel_city.clone());
       }      
-      else if(country.val() === "kazah"){
+      else if(country.val() === "kaz"){
         city_select.html('');
-        city_select.append(kazah_city.clone());
+        city_select.append(kaz_city.clone());
       }
       else {
         city_select.html('');
@@ -10877,20 +10874,55 @@ $(document).ready(function(){
   close.on('click', function(){
     form.removeClass('active');
     setTimeout(function(){
-      brush.removeClass('active')}, 400);
+      brush.removeClass('active')}, 100);
     close.removeClass('active');
     button.addClass('active');
     form[0].reset();
   });
-
+	
   doc.on('keydown', function(event){
     if (event.keyCode == 9 && !form.hasClass('active')){
       event.preventDefault();
     }
   });
-
 });
 
+// (function() {
+//   "use strict";
+//   $(function() {
+//     var page;
+//     console.log('%cinitializing modules...', 'color: green');
+//     page = $('html').data('page');
+//     Manifest.forEach(function(manifest) {
+//       if (manifest.pages.indexOf(page) !== -1) {
+//         return manifest.modules.forEach(function(module, index, modules) {
+//           var error;
+//           console.time("" + module + " " + (index + 1) + "/" + modules.length);
+//           try {
+//             Modules[module].init();
+//           } catch (_error) {
+//             error = _error;
+//             console.log("%c" + module + " " + (index + 1) + "/" + modules.length + ": error", 'color: red');
+//             throw error;
+//           }
+//           return console.timeEnd("" + module + " " + (index + 1) + "/" + modules.length);
+//         });
+//       }
+//     });
+//     return console.log('%call modules was successfully initialized!', 'color: green');
+//   });
+
+// }).call(this);
+// (function() {
+//   "use strict";
+//   window.Manifest = [
+//     {
+//       pages: ['index'],
+//       modules: ['index']
+//     }
+//   ];
+
+// }).call(this);
 (function() {
   "use strict";
   $(function() {
