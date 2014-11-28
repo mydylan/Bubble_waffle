@@ -5,10 +5,11 @@
         img.waffle_logo alt=("#") src=(asset_path "logo.png")
       .form_wrapper
         img.brush alt=("#") src=(asset_path "brush-bg.png")
+        img.request alt=("#") src=(asset_path "request.png")
         form.project_form name="myform" method="post" enctype="" action="#" 
           img.close alt=("#") src=(asset_path "close.png")
           .project_name
-            input#name name="name" type="text" placeholder="Ваше Имя" value="" required=""
+            input#name name="name" type="text" placeholder="Ваше Имя" value="" required="" autocomplete="off"
           .project_country
             select#country  name="country" type="text" placeholder="Страна" value="" required=""
               option selected="" value="def" Страна
@@ -70,13 +71,13 @@
               option value="email" Email
               option value="skype" Skype
           .connect_tel
-            input#input_tel name="tel" type="tel" placeholder="Номер телефона" value="" 
+            input#input_tel name="tel" type="tel" placeholder="Номер телефона" value="" autocomplete="off"
           .connect_email
-            input#input_email name="email" type="email" placeholder="Ваш email" value="" 
+            input#input_email name="email" type="email" placeholder="Ваш email" value="" autocomplete="off"
           .connect_skype
-            input#input_skype name="skype" type="text" placeholder="Ваш skype" value=""
+            input#input_skype name="skype" type="text" placeholder="Ваш skype" value="" autocomplete="off"
           .clr 
-          button.button_submit type="submit" Отправить
+          button.button_submit type="submit" value="" Отправить
       .clr
       .content  
         img.people alt=("#") src=(asset_path "people.png")

@@ -22,6 +22,8 @@ $(document).ready(function(){
     frenchize = $('.frenchize_wrapper'),
     copy_writter = $('.copy_writter'),
     social = $('.social_wrapper'),
+    request = $('.request'),
+    button_submit = $('.button_submit'),
     doc = $(document);
 
   setTimeout(function(){
@@ -39,7 +41,6 @@ $(document).ready(function(){
     brush.addClass('active');
 	  setTimeout(function(){
       form.addClass('active');}, 600);
-    close.addClass('active');
     input_email.removeClass('active');
     input_tel.removeClass('active');
     input_city.removeClass('active');
@@ -103,7 +104,6 @@ $(document).ready(function(){
     form.removeClass('active');
     setTimeout(function(){
       brush.removeClass('active')}, 100);
-    close.removeClass('active');
     button.addClass('active');
     form[0].reset();
   });
@@ -112,5 +112,20 @@ $(document).ready(function(){
     if (event.keyCode == 9 && !form.hasClass('active')){
       event.preventDefault();
     }
+  });
+  button_submit.on('click', function(event){
+    event.preventDefault();
+    form.removeClass('active');
+    request.addClass('active');
+    setTimeout(function(){
+      request.removeClass('active');
+      form[0].reset();
+    }, 3500);
+    setTimeout(function(){
+      brush.removeClass('active');
+    }, 4000);    
+    setTimeout(function(){
+      button.addClass('active');
+    }, 3500);
   });
 });
