@@ -19,4 +19,3 @@
 
 //= require app
 //= require manifest
-//= require_tree ./application

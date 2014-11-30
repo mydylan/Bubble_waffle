@@ -103,7 +103,7 @@ $(document).ready(function(){
   close.on('click', function(){
     form.removeClass('active');
     setTimeout(function(){
-      brush.removeClass('active')}, 100);
+      brush.removeClass('active')}, 300);
     button.addClass('active');
     form[0].reset();
   });
@@ -113,7 +113,7 @@ $(document).ready(function(){
       event.preventDefault();
     }
   });
-  button_submit.on('click', function(event){
+  button_submit.on('submit', function(event){
     event.preventDefault();
     form.removeClass('active');
     request.addClass('active');
